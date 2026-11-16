@@ -53,26 +53,27 @@ These are **zone-level** datasets. To query them, provide your zone ID (not acco
 
 The `emailSendingAdaptiveGroups` dataset supports the following dimensions for grouping and filtering:
 
-| Dimension                | Type   | Description                                                  |
-| ------------------------ | ------ | ------------------------------------------------------------ |
-| `date`                   | Date   | Day-level grouping                                           |
-| `datetime`               | Time   | Exact event timestamp                                        |
-| `datetimeMinute`         | Time   | Minute-level grouping                                        |
-| `datetimeFiveMinutes`    | Time   | 5-minute interval grouping                                   |
-| `datetimeFifteenMinutes` | Time   | 15-minute interval grouping                                  |
-| `datetimeHour`           | Time   | Hour-level grouping                                          |
-| `status`                 | string | Delivery status (for example, `delivered`, `deliveryFailed`) |
-| `eventType`              | string | Origin of email (`incoming`, `forward`, `reply`, `newEmail`) |
-| `sendingDomain`          | string | The domain used to send the email                            |
-| `envelopeTo`             | string | Recipient envelope address                                   |
-| `errorCause`             | string | Error cause for failed sends                                 |
-| `arc`                    | string | ARC authentication result                                    |
-| `dkim`                   | string | DKIM authentication result                                   |
-| `dmarc`                  | string | DMARC authentication result                                  |
-| `spf`                    | string | SPF authentication result                                    |
-| `isSpam`                 | uint8  | Whether the email was flagged as spam                        |
-| `isNDR`                  | uint8  | Whether the email is a non-delivery report                   |
-| `isLastEvent`            | uint8  | Whether this is the last event for this email                |
+| Dimension                | Type   | Description                                                            |
+| ------------------------ | ------ | ---------------------------------------------------------------------- |
+| `date`                   | Date   | Day-level grouping                                                     |
+| `datetime`               | Time   | Exact event timestamp                                                  |
+| `datetimeMinute`         | Time   | Minute-level grouping                                                  |
+| `datetimeFiveMinutes`    | Time   | 5-minute interval grouping                                             |
+| `datetimeFifteenMinutes` | Time   | 15-minute interval grouping                                            |
+| `datetimeHour`           | Time   | Hour-level grouping                                                    |
+| `status`                 | string | Delivery status (for example, `delivered`, `deliveryFailed`)           |
+| `eventType`              | string | Origin of email (`incoming`, `forward`, `reply`, `newEmail`)           |
+| `sendingDomain`          | string | The domain used to send the email                                      |
+| `envelopeTo`             | string | Recipient envelope address                                             |
+| `errorCause`             | string | Error cause for failed sends                                           |
+| `arc`                    | string | ARC authentication result                                              |
+| `dkim`                   | string | DKIM authentication result                                             |
+| `dmarc`                  | string | DMARC authentication result                                            |
+| `spf`                    | string | SPF authentication result                                              |
+| `isSpam`                 | uint8  | Whether the email was flagged as spam                                  |
+| `isNDR`                  | uint8  | Whether the email is a non-delivery report                             |
+| `isLastEvent`            | uint8  | Whether this is the last event for this email                          |
+| `isVerifiedRecipient`    | uint8  | Whether the recipient is a verified destination address of the account |
 
 The `emailSendingAdaptive` dataset includes all of the above plus per-event fields: `from`, `to`, `subject`, `messageId`, `sessionId`, `errorDetail`.
 
